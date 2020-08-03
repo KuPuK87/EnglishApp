@@ -24,15 +24,17 @@ body {
   padding: 150px 0 0 0;
 }
 
-.nav_container li {
+.nav_container a {
+  text-decoration: none;
   padding: 15px;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
   line-height: 28px;
+  color: #fff;
 }
 
-.active {
+.nav_container a.active {
   background: #F9FBFF;
   color: #20B887;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -69,10 +71,16 @@ body {
   border-radius: 50%;
 }
 
-.btn_round.add {
+.btn_round.add, 
+.btn_round.close {
   background-image: url("./img/icon_add.svg");
   background-position: center;
   background-repeat: no-repeat;
+  transition: all .2s linear;
+}
+
+.btn_round.close {
+  transform: rotate(45deg);
 }
 
 .app_wraper {
@@ -135,7 +143,7 @@ body {
 
 .library-container>div {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   text-align: center;
   column-gap: 20px;
   font-style: normal;

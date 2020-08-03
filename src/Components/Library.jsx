@@ -13,6 +13,7 @@ class Page extends React.Component {
         this.changeMode = this.changeMode.bind(this)
         this.getValue = this.getValue.bind(this)
         this.addWordToLibrary = this.addWordToLibrary.bind(this)
+        this.removeWordFromLibrary = this.removeWordFromLibrary.bind(this)
     }
 
     componentDidMount() {
@@ -27,6 +28,13 @@ class Page extends React.Component {
         this.setState(prevState => ({
             isOpen: !prevState.isOpen
         }))
+    }
+
+    async removeWordFromLibrary(index) {
+        await this.setState(prevState => ({
+            library: prevState.library.filter((word, i) => i !== index)
+        }))
+        await localStorage.setItem('library', JSON.stringify(this.state.library))
     }
 
     async addWordToLibrary() {
@@ -45,10 +53,13 @@ class Page extends React.Component {
                 }))
             }
             await this.setState(prevState => ({
-                library: [...prevState.library, { id: this.state.value.length, word: this.state.value, translate: this.state.translation }]
+                library: [...prevState.library, { id: this.state.library.length, word: this.state.value, translate: this.state.translation }]
             }))
             await localStorage.setItem('library', JSON.stringify(this.state.library))
-            console.log(result.outputs[0].output)
+            await this.changeMode()
+            await this.setState(() => ({
+                translation: ''
+            }))
         }
         catch (error) {
             console.log(error)
@@ -62,7 +73,6 @@ class Page extends React.Component {
         }))
     }
 
-
     render() {
         return (
             <div className="page-container">
@@ -75,7 +85,7 @@ class Page extends React.Component {
                             <button onClick={this.addWordToLibrary} className="btn_round check"> ✓</button>
                         </div>
                     }
-                    <button onClick={this.changeMode} className="btn_round add"></button>
+                    <button onClick={this.changeMode} className={this.state.isOpen ? 'btn_round add' : 'btn_round close'}></button>
                 </div>
 
                 <div className="library-container">
@@ -84,8 +94,8 @@ class Page extends React.Component {
                         <div>Translate</div>
                         <div>Learn level</div>
                     </div>
-                    {this.state.library.map(word => (
-                        <div>
+                    {this.state.library.map((word, index) => (
+                        <div key={index}>
                             <div>
                                 {word.id}
                             </div>
@@ -95,12 +105,10 @@ class Page extends React.Component {
                             <div>
                                 {word.translate}
                             </div>
+                            <div onClick={() => this.removeWordFromLibrary(index)} >Delete</div>
                         </div>
-
                     ))}
-
                 </div>
-
             </div>
         )
     }
