@@ -21,11 +21,13 @@ const Training = () => {
                 modeTitle={modeTitle[0]}
                 modeDescription={modeDescription[0]}
                 imgMode={imgMode[0]}
+                path ={path[0]}
             />
             <Mode modeClassName={modeClassName[1]}
                 modeTitle={modeTitle[1]}
                 modeDescription={modeDescription[1]}
                 imgMode={imgMode[1]}
+                path ={path[1]}
             />
         </div>
     )

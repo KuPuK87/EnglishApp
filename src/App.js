@@ -5,6 +5,7 @@ import Score from './Components/Score';
 import Library from './Components/Library';
 import Training from './Components/Training';
 import Learn from './Components/Learn';
+import Game from './Components/Games/Game';
 import './App.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/library' component={Library} />
             <Route path='/training' component={Training} />
             <Route path='/learn' component={Learn} />
+            <Route path='/training/check-mode' component={Game} />
         </div>
       </BrowserRouter>
   )

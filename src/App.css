@@ -317,11 +317,11 @@ body {
   line-height: 28px;
 }
 
-.easy_mode .mode_description{
+.easy_mode .mode_description {
   color: #1B81DF;
 }
 
-.hard_mode .mode_description{
+.hard_mode .mode_description {
   color: #1B46DF;
 }
 
@@ -329,4 +329,46 @@ body {
   display: grid;
   align-items: start;
   margin: 130px auto;
+}
+
+.game_page {
+  position: absolute;
+  height: 100%;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(242, 246, 254);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn_exit {
+  position: fixed;
+  width: 176px;
+  height: 48px;
+  left: 42px;
+  top: 32px;
+  background: #036344;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  line-height: 42px;
+}
+
+.correct_title {
+  font-size: 24px;
+  line-height: 28px;
+  color: #006A31;
+  margin-right: 15px;
+}
+
+.error_title {
+  font-size: 24px;
+  line-height: 28px;
+  color: #680000;
+}
+
+.points_block {
+position: absolute;
+left: 300px;
+top: 40px;
 }
