@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default () => {
+export default (props) => {
+
     return (
         <div>
-
+            check
         </div>
     )
 }

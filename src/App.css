@@ -173,8 +173,9 @@ body {
 }
 
 .score {
+  z-index: 4;
   position: absolute;
-  left: 350px;
+  right: 60px;
   top: 20px;
   color: green;
 }
@@ -368,7 +369,11 @@ body {
 }
 
 .points_block {
-position: absolute;
-left: 300px;
-top: 40px;
+  position: absolute;
+  left: 300px;
+  top: 40px;
+}
+
+.mode_page a {
+  text-decoration: none;
 }
