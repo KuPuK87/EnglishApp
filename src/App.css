@@ -8,7 +8,7 @@ body {
 
 .nav {
   max-width: 295px;
-  height: 1024px;
+  height: 100vh;
   left: 0;
   top: 0;
   background: #20B887;
@@ -339,7 +339,6 @@ body {
   top: 0;
   left: 0;
   background: rgba(242, 246, 254);
-  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .btn_exit {
