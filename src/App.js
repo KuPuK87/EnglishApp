@@ -19,12 +19,14 @@ const App = () => {
             <Route path='/training' component={Training} />
             <Route path='/learn' component={Learn} />
             <Route path='/training/check-mode'>
-              <Game setScore={setScore}/>
+              <Game setScore={setScore}
                     score={score}
+                    />
             </Route>
             <Route path='/training/write-mode'>
-              <Game setScore={setScore}/>
+              <Game setScore={setScore}
                     score={score}
+                    />
             </Route>
         </div>
       </BrowserRouter>
