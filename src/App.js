@@ -35,15 +35,11 @@ const App = () => {
             />
               </Route>
             <Route path='/training/check-mode'>
-              <Game setScore={setScore}
-                    score={score}
-                    CheckLevel={CheckLevel}
+              <Game CheckLevel={CheckLevel}
                     />
             </Route>
             <Route path='/training/write-mode'>
-              <Game setScore={setScore}
-                    score={score}
-                    CheckLevel={CheckLevel}
+              <Game CheckLevel={CheckLevel}
                     />
             </Route>
         </div>
