@@ -24,6 +24,7 @@ export default (props) => {
                     wrongAnswer={wrongAnswer}
                     setCorrectAnswer={setCorrectAnswer}
                     setWrongAnswer={setWrongAnswer}
+                    CheckLevel={props.CheckLevel}
                 /> :
                 location.pathname === '/training/write-mode' ?
                     <WriteMode

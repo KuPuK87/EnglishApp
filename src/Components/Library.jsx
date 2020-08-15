@@ -10,10 +10,12 @@ class Page extends React.Component {
             library: JSON.parse(localStorage.getItem('library')) || [{ id: 0, word: '', translate: '' }]
         }
 
+        this.wordsRef = Array(this.state.library.length)
         this.changeMode = this.changeMode.bind(this)
         this.getValue = this.getValue.bind(this)
         this.addWordToLibrary = this.addWordToLibrary.bind(this)
         this.removeWordFromLibrary = this.removeWordFromLibrary.bind(this)
+        this.checkWord =  this.checkWord.bind(this)
     }
 
     componentDidMount() {
@@ -73,6 +75,12 @@ class Page extends React.Component {
         }))
     }
 
+    checkWord() {
+        // let s = this.wordsRef[1]
+        // document.querySelectorAll('.class')
+    
+    }
+
     render() {
         return (
             <div className="page-container">
@@ -95,7 +103,9 @@ class Page extends React.Component {
                         <div>Learn level</div>
                     </div>
                     {this.state.library.map((word, index) => (
-                        <div key={index}>
+                        <div key={index}
+                        ref={el => this.wordsRef[index] = el}
+                        >
                             <div>
                                 {word.id}
                             </div>
@@ -109,6 +119,7 @@ class Page extends React.Component {
                         </div>
                     ))}
                 </div>
+                {/* <button onClick={this.checkWord}> Check the word</button> */}
             </div>
         )
     }

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useRef} from 'react';
 
-export default () => {
+export default (props) => {
+    const inputRef = useRef()
+
     return (
-        <div>
-
+        <div className='mode_wraper'>
+            <input ref={inputRef} type="text" placeholder='Enter word' />
+            <button >Check</button>
         </div>
     )
 }

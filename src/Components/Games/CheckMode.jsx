@@ -8,10 +8,13 @@ export default (props) => {
                 props.setCorrectAnswer(props.correctAnswer + 1)
                 props.setScore(props.score + 1)
                 setCurrentWordIndex(currentWordIndex + 1)
+                props.CheckLevel()
             } else {
                 props.setWrongAnswer(props.wrongAnswer + 1)
             }
         } else {
+            props.setScore(props.score + 1) // по уроку при правильном ответе и окончании игры не защитывает последний правильный ответ
+            setCurrentWordIndex(currentWordIndex + 1)
             alert('Game Over')
             props.setCorrectAnswer(0)
             props.setWrongAnswer(0)
@@ -20,7 +23,7 @@ export default (props) => {
     }
 
     const [currentWordIndex, setCurrentWordIndex] = useState(0)
-    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')))
+    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{ id: 0, word: 'a', translate: '' }, { id: 0, word: 'a', translate: '' }, { id: 0, word: 'a', translate: '' }])
     const [checkArr, setCheckArr] = useState([])
     const currentWord = library[currentWordIndex].translate
     const [initialScore, setInitialScore] = useState(props.score)
@@ -33,11 +36,15 @@ export default (props) => {
     }, [props.correctAnswer])
 
     useEffect(() => {
-        return () => {
-            props.setScore(initialScore)
-        }
+        // return () => {
+        //     props.setScore(initialScore)
+        // }
         //componentWillUnmount
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('score', props.score)
+    }, [props.score])
 
     return (
         <div className='mode_wraper'>

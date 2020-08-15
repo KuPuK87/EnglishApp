@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Learn = () => {
+const Learn = ({setScore, score, CheckLevel}) => {
     const library = JSON.parse(localStorage.getItem('library')) || [{ id: 0, word: '', translate: '' }]
     const [index, setIndex] = useState(0)
     const [end, setEnd] = useState(false)
@@ -12,8 +12,11 @@ const Learn = () => {
     const nextWord = () => {
         if (library.length - 1 !== index) {
             setIndex(index + 1)
+            setScore(score + 0.5)
+            CheckLevel()
         } else {
             setEnd(true)
+            
         }
 
     }
