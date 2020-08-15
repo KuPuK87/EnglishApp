@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, createContext} from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 import Nav from './Components/Nav/Nav';
 import Score from './Components/Score';
@@ -7,6 +7,7 @@ import Training from './Components/Training';
 import Learn from './Components/Learn';
 import Game from './Components/Games/Game';
 import './App.css';
+import {Context} from './context'
 
 const App = () => {
   const checkLevel = () => {
@@ -20,6 +21,7 @@ const App = () => {
   }
     return (
      <BrowserRouter>
+     <Context.Provider value ={{setScore, score}}>
         <div className="app_wraper">
           <Score score={score} />
             <Nav level={level}/>
@@ -45,6 +47,7 @@ const App = () => {
                     />
             </Route>
         </div>
+        </Context.Provider>
       </BrowserRouter>
   )
 }

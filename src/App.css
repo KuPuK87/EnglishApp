@@ -55,6 +55,7 @@ body {
   font-size: 36px;
   line-height: 42px;
   color: #6FF3C8;
+  white-space: nowrap;
 }
 
 .btn_round:focus {
@@ -420,4 +421,25 @@ body {
   align-content: center;
   text-align: center;
   row-gap: 10px;
+}
+
+.input_block {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  column-gap: 10px;
+}
+
+.custom_input {
+  border: none;
+  position: relative;
+  background: transparent;
+  padding: 8px 15px;
+  border-bottom: 1px solid #084934;
+}
+
+.btn_enter {
+  background-color: #084934;
+  color: #fff;
+  padding: 8px;
 }

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import CheckMode from "./CheckMode";
 import WriteMode from "./WriteMode";
@@ -30,6 +30,11 @@ export default (props) => {
                     <WriteMode
                         setScore={props.setScore}
                         score={props.score}
+                        correctAnswer={correctAnswer}
+                        wrongAnswer={wrongAnswer}
+                        setCorrectAnswer={setCorrectAnswer}
+                        setWrongAnswer={setWrongAnswer}
+                        CheckLevel={props.CheckLevel}
                     /> : null}
         </div >
     )
