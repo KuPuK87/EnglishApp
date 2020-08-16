@@ -5,6 +5,7 @@ import Score from './Components/Score';
 import Library from './Components/Library';
 import Training from './Components/Training';
 import Learn from './Components/Learn';
+import StartPage from './Components/StartPage';
 import Game from './Components/Games/Game';
 import './App.css';
 import {Context} from './context'
@@ -42,6 +43,7 @@ const App = () => {
               <Game CheckLevel={CheckLevel}
                     />
             </Route>
+            <StartPage />
         </div>
         </Context.Provider>
       </BrowserRouter>

@@ -17,8 +17,9 @@ const Learn = ({ setScore, score, CheckLevel }) => {
             library[index].learn = library[index].learn + 1
             localStorage.setItem('library', JSON.stringify(library))
         } else {
+            library[index].learn = library[index].learn + 1
+            localStorage.setItem('library', JSON.stringify(library))
             setEnd(true)
-
         }
 
     }

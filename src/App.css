@@ -443,3 +443,24 @@ body {
   color: #fff;
   padding: 8px;
 }
+
+.start_page {
+  display: grid;
+  row-gap: 30px;
+  align-content: center;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+.start_page > div {
+  font-size: 30px;
+  font-weight: 600;
+  color: #46B987;
+}
+
+.start_page img {
+  width: 200px;
+}

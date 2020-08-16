@@ -1,8 +1,8 @@
 import React from 'react';
 import LogoContainer from './LogoContainer';
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Nav = ( {level}) => {
+const Nav = ({ level }) => {
     return (
         <nav className="nav">
             <LogoContainer level={level} />
