@@ -16,6 +16,7 @@ const App = () => {
   }
   const [score, setScore] = useState(+localStorage.getItem('score') || 0)
   const [level, setLevel] = useState(checkLevel())
+  // const wordsOnLibrary = useState(+localStorage.getItem('library').length || 0)
 
   const CheckLevel = () => {
         setLevel(checkLevel())
@@ -38,7 +39,11 @@ const App = () => {
                   score={score}
             />
             </Route>
-            {/* <StartPage  path='/' /> */}
+            <Route exact path='/'>
+            <StartPage 
+                  // wordsOnLibrary={wordsOnLibrary}
+            />
+            </Route>
             <Route path='/training/check-mode'>
               <Game CheckLevel={CheckLevel}
                     />
@@ -47,7 +52,6 @@ const App = () => {
               <Game CheckLevel={CheckLevel}
                     />
             </Route>
-           
         </div>
         </Context.Provider>
       </BrowserRouter>
