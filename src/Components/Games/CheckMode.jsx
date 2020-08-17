@@ -28,15 +28,18 @@ export default (props) => {
     }
 
     const [currentWordIndex, setCurrentWordIndex] = useState(0)
-    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{ id: 0, word: 'a', translate: '' }, { id: 0, word: 'a', translate: '' }, { id: 0, word: 'a', translate: '' }])
+    const [library, setLibrary] = useState(JSON.parse(localStorage.getItem('library')) || [{ id: 0, word: 'null', translate: '' }, { id: 0, word: 'null', translate: '' }, { id: 0, word: 'null', translate: '' }])
     const [checkArr, setCheckArr] = useState([])
     const currentWord = library[currentWordIndex].translate
 
     useEffect(() => {
-        const filterArr = library.filter((item, index) => index !== currentWordIndex)
-        filterArr.sort(() => Math.random() - 0.5)
-        const checkArr = [filterArr[0].word, filterArr[1].word, library[currentWordIndex].word]
-        setCheckArr(checkArr.sort(() => Math.random() - 0.5))
+        if (library.length >= 3) {
+            const filterArr = library.filter((item, index) => index !== currentWordIndex)
+            filterArr.sort(() => Math.random() - 0.5)
+            const checkArr = [filterArr[0].word, filterArr[1].word, library[currentWordIndex].word]
+            setCheckArr(checkArr.sort(() => Math.random() - 0.5))
+        }
+
     }, [props.correctAnswer])
 
     useEffect(() => {
