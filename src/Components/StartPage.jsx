@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import React from 'react';
 import logo from '../img/logo.svg';
 
 const StartPage = () => {
@@ -19,7 +18,6 @@ const StartPage = () => {
     const sumCorrect = library.sum("correct");
     const sumError = library.sum("error");
     const overalLearn = sumCorrect / (sumCorrect + sumError) * 100
-    const block = ''
 
     // console.log(sumLearn)
     // console.log(sumCorrect)
