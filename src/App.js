@@ -20,6 +20,9 @@ const App = () => {
   const CheckLevel = () => {
         setLevel(checkLevel())
   }
+
+  // const isTrue = (window.location.href= '/')
+
     return (
      <BrowserRouter>
      <Context.Provider value ={{setScore, score}}>
@@ -34,7 +37,8 @@ const App = () => {
                   setScore={setScore}
                   score={score}
             />
-              </Route>
+            </Route>
+            {/* <StartPage  path='/' /> */}
             <Route path='/training/check-mode'>
               <Game CheckLevel={CheckLevel}
                     />
@@ -43,7 +47,7 @@ const App = () => {
               <Game CheckLevel={CheckLevel}
                     />
             </Route>
-            <StartPage />
+           
         </div>
         </Context.Provider>
       </BrowserRouter>

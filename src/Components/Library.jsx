@@ -15,7 +15,7 @@ class Page extends React.Component {
         this.getValue = this.getValue.bind(this)
         this.addWordToLibrary = this.addWordToLibrary.bind(this)
         this.removeWordFromLibrary = this.removeWordFromLibrary.bind(this)
-        this.checkWord =  this.checkWord.bind(this)
+        this.checkWord = this.checkWord.bind(this)
     }
 
     componentDidMount() {
@@ -78,7 +78,7 @@ class Page extends React.Component {
     checkWord() {
         // let s = this.wordsRef[1]
         // document.querySelectorAll('.class')
-    
+
     }
 
     render() {
@@ -98,16 +98,16 @@ class Page extends React.Component {
 
                 <div className="library-container">
                     <div className="library-header">
+                        <div>№</div>
                         <div>Word</div>
                         <div>Translate</div>
-                        <div>Learn level</div>
                     </div>
                     {this.state.library.map((word, index) => (
                         <div key={index}
-                        ref={el => this.wordsRef[index] = el}
+                            ref={el => this.wordsRef[index] = el}
                         >
                             <div>
-                                {word.id}
+                                {word.id+1}
                             </div>
                             <div>
                                 {word.word}
